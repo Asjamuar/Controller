@@ -11,6 +11,10 @@ table {
     margin: 1px;
 }
 
+small {
+    color: blue;
+}
+
 .options {
     padding: 10px;
 }
