@@ -8,6 +8,7 @@ import { DataComponent } from './data/data.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './data/filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
+// import { UiSwitchModule } from './app.component';
 
 @NgModule({
   declarations: [

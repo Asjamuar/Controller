@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DATA } from './dummy-data';
+// import { DATA } from './dummy-data';
 import { DbInteractionService } from './db-interaction.service';
+// import { UiSwitchModule } from '.././app.component';
 // import { FilterPipe } from './filter.pipe';
 
 @Component({

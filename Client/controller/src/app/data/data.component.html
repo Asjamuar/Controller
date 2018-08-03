@@ -1986,14 +1986,22 @@
     <br>
     <div class="form-group">
       <input [(ngModel)]="searchText" class="search-input" placeholder="search text goes here"> &nbsp; 
-      
     </div>
     <div class="options" *ngFor="let d of data | filter : searchText">
       <!-- {{d | json}} -->
       
-      <table (click)="changeImage(d.type)">
+      <table>
         <tr>
-          <td><h4>{{d.name}}</h4></td>
+          <td><h4>{{d.name}} <img width="15px" height="15px" src="../../assets/Images/information.svg"  (click)="changeImage(d.type)"></h4></td>
+          <td></td>
+          <td></td>
+          <td>
+            <br>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </td>
         </tr>
         <tr>
           <td [ngSwitch]="d.data.CWIT >= 0"><span *ngSwitchCase="true"><b>CWIT:</b>{{d.data.CWIT}}</span><span *ngSwitchCase="false"><b>CWIT:</b>--</span></td>
@@ -2009,6 +2017,19 @@
           <!-- <td [ngSwitch]="d.data.Status >= 0"><span *ngSwitchCase="true"><b>Status:</b>{{d.data.Status}}</span><span *ngSwitchCase="false"><b>Status:</b>--</span></td> -->
           <td [ngSwitch]="d.data.SA >= 0"><span *ngSwitchCase="true"><b>SA:</b>{{d.data.SA}}</span><span *ngSwitchCase="false"><b>SA:</b>--</span></td>
         </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="number" placeholder="Actuator" min="0" max="100">
+          </td>
+          <td>
+            <input type="number" placeholder="Frequency" min="0" max="60">
+          </td>
+          <td>
+            <button class="btn btn-primary">Commit Change</button>
+          </td>
+        </tr>
+        
       </table>
       <!-- <span VFD "><b>VFD:</b>{{d.data.VFD}}</span> &nbsp; <span VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span> -->
     </div>
