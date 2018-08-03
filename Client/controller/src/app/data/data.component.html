@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="bucket">
+    <div class="form-group">
+      <input [(ngModel)]="searchText" class="search-input" placeholder="search text goes here"> &nbsp; 
+    </div>
+    <div class="options" *ngFor="let d of data | filter : searchText">
+      <!-- {{d | json}} -->
+      <table>
+        <tr>
+          <td><h4>{{d.name}}</h4></td>
+        </tr>
+        <tr>
+          <td [ngSwitch]="d.data.CWIT >= 0"><span *ngSwitchCase="true"><b>CWIT:</b>{{d.data.CWIT}}</span><span *ngSwitchCase="false"><b>CWIT:</b>--</span></td>
+          <td [ngSwitch]="d.data.CWOT >= 0"><span *ngSwitchCase="true"><b>CWOT:</b>{{d.data.CWOT}}</span><span *ngSwitchCase="false"><b>CWOT:</b>--</span></td>
+          <td [ngSwitch]="d.data.Actuator >= 0"><span *ngSwitchCase="true"><b>Actuator:</b>{{d.data.Actuator}}</span><span *ngSwitchCase="false"><b>Actuator:</b>--</span></td>
+          <td [ngSwitch]="d.data.Status >= 0"><span *ngSwitchCase="true"><b>Status:</b>{{d.data.Status}}</span><span *ngSwitchCase="false"><b>Status:</b>--</span></td>
+          <!-- <td [ngSwitch]="d.data.SA >= 0"><span *ngSwitchCase="true"><b>SA:</b>{{d.data.SA}}</span><span *ngSwitchCase="false"><b>SA:</b>--</span></td> -->
+        </tr>
+        <tr>
+          <td [ngSwitch]="d.data.mode >= 0"><span *ngSwitchCase="true"><b>mode:</b>{{d.data.mode}}</span><span *ngSwitchCase="false"><b>mode:</b>--</span></td>
+          <td [ngSwitch]="d.data.EM >= 0"><span *ngSwitchCase="true"><b>EM:</b>{{d.data.EM}}</span><span *ngSwitchCase="false"><b>EM:</b>--</span></td>
+          <td [ngSwitch]="d.data.VFD >= 0"><span *ngSwitchCase="true"><b>Frequency:</b>{{d.data.VFD}}</span><span *ngSwitchCase="false"><b>Frequency:</b>--</span></td>
+          <!-- <td [ngSwitch]="d.data.Status >= 0"><span *ngSwitchCase="true"><b>Status:</b>{{d.data.Status}}</span><span *ngSwitchCase="false"><b>Status:</b>--</span></td> -->
+          <td [ngSwitch]="d.data.SA >= 0"><span *ngSwitchCase="true"><b>SA:</b>{{d.data.SA}}</span><span *ngSwitchCase="false"><b>SA:</b>--</span></td>
+        </tr>
+      </table>
+      <!-- <span VFD "><b>VFD:</b>{{d.data.VFD}}</span> &nbsp; <span VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span>&nbsp; <span *ngIf="d.data.VFD "><b>VFD:</b>{{d.data.VFD}}</span> -->
+    </div>
+  </div>
+</div>
