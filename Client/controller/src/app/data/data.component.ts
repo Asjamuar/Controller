@@ -11,6 +11,7 @@ import { DbInteractionService } from './db-interaction.service';
 export class DataComponent implements OnInit {
 
   data: any;
+  img = '';
   constructor(private dbInteraction: DbInteractionService) { }
 
   ngOnInit() {
@@ -19,6 +20,10 @@ export class DataComponent implements OnInit {
 
   getData() {
     this.dbInteraction.getData().subscribe(data => { this.data = data; });
+    // this.data = DATA;
   }
 
+  changeImage(type: string) {
+    this.img = type;
+  }
 }

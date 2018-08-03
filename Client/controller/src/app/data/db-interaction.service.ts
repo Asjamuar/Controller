@@ -11,6 +11,6 @@ export class DbInteractionService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<any> {
-    return this.httpClient.get<any>('https://s3-us-west-2.amazonaws.com/sj-placement-content/components.json');
+    return this.httpClient.get<any>('http://localhost:4000/');
   }
 }
